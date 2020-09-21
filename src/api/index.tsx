@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 import {Item} from './types'
 
 export interface ClientAPIConfig extends AxiosRequestConfig{
-  baseURL: string
+  // baseURL: string
 }
 
 export class ClientAPI {
@@ -47,6 +47,9 @@ export class ItemsAPI extends ClientAPI{
 
 // singletons
 
+/**
+ * Removed base url since package.json has proxy field
+ */
 export const itemsAPI:ItemsAPI = new ItemsAPI({
-  baseURL: process.env.REACT_APP_ITEMS_BASE_URL!
+  //baseURL: process.env.REACT_APP_ITEMS_BASE_URL!
 })
